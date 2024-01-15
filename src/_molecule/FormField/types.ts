@@ -4,4 +4,6 @@ export interface FormFieldProps {
     placeholder?: string;
     required?: boolean;
     removeBorder?: boolean;
+    labelicon?:string;
+    passicons?:string;
   }

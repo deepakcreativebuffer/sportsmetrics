@@ -1,6 +1,9 @@
 export interface FormValues {
-    email: string;
-    password: string;
+  firstName: string;  
+  lastName: string;  
+  email: string;
+  phone:string;
+  password: string;
   }
   
   interface APIResponse {

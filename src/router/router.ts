@@ -15,12 +15,12 @@ export const routes:LayoutItem[]= [
         path: "/",
         component: lazy(() => import("../_organism/RegistrationPage")),
       },
-      // {
-      //   name: "login",
-      //   title: "Login",
-      //   path: "/",
-      //   // component: lazy(() => import("../_organism/WalkThroughPage")),
-      // },
+      {
+        name: "stepform",
+        title: "StepForm",
+        path: "/step",
+        component: lazy(() => import("../_organism/StepRegistration/")),
+      },
       // {
       //   name: "login",
       //   title: "Login",

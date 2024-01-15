@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 // import { toast } from "react-hot-toast";
-import { Error } from "../../api/Error";
+// import { Error } from "../../api/Error";
 import {
   LoginPageDiv,
   LoginWrapper,
@@ -14,29 +14,40 @@ import {
   FormBody,
   FormBodyInner,
   FormTitle,
-  BubbleWrapperSecond,
-  BubbleImageSecond,
+  // BubbleWrapperSecond,
+  // BubbleImageSecond,
   Title,
+  Divider,
+  SignupButton,
 } from "./styled";
 // import AppIcon from "../../../src/ImagesIcons/AppIcon";
-import Bubble from "../../../src/ImagesIcons/bubble.png";
-import Bubble2 from "../../../src/ImagesIcons/bubble2.png";
+// import Bubble from "../../../src/ImagesIcons/bubble.png";
+// import Bubble2 from "../../../src/ImagesIcons/bubble2.png";
 import FormField from "../../_molecule/FormField";
 import { FilledButton } from "../../_atom/Buttons";
-import IconText from "../../_molecule/IconText";
+// import IconText from "../../_molecule/IconText";
 import { FormikHelpers } from "formik";
 import { useNavigate } from "react-router-dom";
 // import { useGetloginMutation } from "../../api/loginApi";
 // import Cookies from "js-cookie";
 import { API, FormValues } from "./types";
 import AuthHeader from "../../_molecule/AuthHeader";
+import user from "../../images/user-icon.png";
+import addtheRate from "../../images/adddrate-cion.png"
+import passIcon from "../../images/lock-icon.png"
+import teleIcon from "../../images/phone-cion.png"
+import passViewIcon from "../../images/eye-icon.png" 
+import gmail from "../../images/gmail.png";
 
 const LoginPage = () => {
   const navigate = useNavigate();
   // const [saveLoginData] = useGetloginMutation();
   const [initialValues, setInitialValues] = useState<FormValues>({
-    email: "",
-    password: "",
+    firstName: '',  
+    lastName: '', 
+    email: '',
+    phone:'',
+    password: ''
   });
 
   useEffect(() => {
@@ -47,10 +58,11 @@ const LoginPage = () => {
   }, []);
 
   const validationSchema = Yup.object().shape({
-    email: Yup.string()
-      .email("Please enter valid email")
-      .required("Please enter email"),
-    password: Yup.string().required("Please enter password"),
+    // firstName: Yup.string().required("Please enter firstname"),
+    // lastName: Yup.string().required("Please enter lastName"),
+    // email: Yup.string().email("Please enter valid email").required("Please enter email"),
+    // phone : Yup.string().required("Please enter phone number"),
+    // password: Yup.string().required("Please enter password"),
   });
 
   const handleSubmit = async (
@@ -85,12 +97,12 @@ const LoginPage = () => {
     //     return Error(err);
     //   },
     // });
+    navigate("/step")
     resetForm();
   };
 
   return (
     <>
-  
     <AuthHeader />
     <LoginPageDiv>
       <LoginWrapper>
@@ -108,29 +120,61 @@ const LoginPage = () => {
                     {({ isSubmitting, isValid }) => (
                       <Form>
                         <FormField
-                          placeholder="Enter your Business Email here"
+                          placeholder="Academy Director First Name"
+                          name="firstName"
+                          fieldName="firstName"
+                          required
+                          labelicon={user}
+                        />
+                            <FormField
+                          placeholder="Academy Director Last Name"
+                          name="lastName"
+                          fieldName="lastName"
+                          required
+                          labelicon={user}
+                        />
+                            <FormField
+                          placeholder="Academy Director Email"
                           name="email"
                           fieldName="Email"
                           required
+                          labelicon={addtheRate}
+                        />
+                          <FormField
+                          placeholder="Academy Director Phone No"
+                          name="phone"
+                          fieldName="Phone"
+                          required
+                          labelicon={teleIcon}
                         />
                         <FormField
                           // tooltip="Should consist of alphanumeric characters and be between 3-50 characters long"
-                          placeholder="Enter your Password here"
+                          placeholder="Password"
                           type="password"
                           name="password"
                           fieldName="Password"
                           required
+                          labelicon={passIcon}
+                          passicon={passViewIcon}
                         />
                         <FilledButton
                           disabled={!isValid || isSubmitting}
                           type="submit"
                           style={{ marginTop: "35px", width: "100%" }}
-                          content="Login"
+                          content="Sign Up"
                         />
                       </Form>
                     )}
                   </Formik>
+                  <Divider className="md-3">
+                    <p className="hr-line"><span>Or</span></p>
+                </Divider>
+                <SignupButton>
+                <button type="submit" className="btn g-btn"><img src={gmail} className="me-2" alt="googleIcon" />
+                Sign Up with Google</button>
+                </SignupButton>
                 </FormBodyInner>
+              
               </FormBody>
             </FormWrapper>
           </LoginBody>

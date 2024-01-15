@@ -1,6 +1,7 @@
 export const theme = {
   colors: {
-    primary: "#405189",
+    // primary: "#405189",
+    primary: "#00A800",
     background: "#f2f2f2",
     // formBackground: "rgba(255, 255, 255, 0.5)",
     formBackground:"rgb(255,255,255)",

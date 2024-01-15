@@ -150,27 +150,88 @@ export const FormBodyInner = styled.div`
 `;
 
 export const FormTitle = styled.div`
-  color: ${(props) => props.theme.colors.primary};
-  text-align: center;
-  align-self: center;
-  white-space: nowrap;
-  margin-bottom: 20px;
-  font: 600 ${(props) => props.theme.fontSizes.large} Plus Jakarta Sans, sans-serif;
-  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
-    white-space: initial;
-  }
-`;
 
-export const BubbleWrapperSecond = styled.div`
-  line-height: normal;
-  width: 26%;
+font-family: 'GT America Trial Cm Bd';
+font-size: 46px;
+text-align: center;
+background: -webkit-linear-gradient(#5d3ca6, #2a1655);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+font-weight:500;
 `;
+  // color: ${(props) => props.theme.colors.primary};
+  // text-align: center;
+  // align-self: center;
+  // white-space: nowrap;
+  // margin-bottom: 20px;
+  // font: 600 ${(props) => props.theme.fontSizes.large} Plus Jakarta Sans, sans-serif;
+  // @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+  //   white-space: initial;
+  // }
 
-export const BubbleImageSecond = styled.img`
-  aspect-ratio: 1.14;
-  object-fit: contain;
-  object-position: center;
+
+
+
+// export const BubbleWrapperSecond = styled.div`
+//   line-height: normal;
+//   width: 26%;
+// `;
+
+// export const BubbleImageSecond = styled.img`
+//   aspect-ratio: 1.14;
+//   object-fit: contain;
+//   object-position: center;
+//   width: 100%;
+//   overflow: hidden;
+//   margin-left: -60px;
+// `;
+
+
+export const Divider = styled.div`
+
+
+.hr-line {
+  position: relative;
+  height: 1px;
+  background: #c9d7c9;
   width: 100%;
-  overflow: hidden;
-  margin-left: -60px;
-`;
+  margin: 25px 0;
+}
+
+.hr-line span {
+  color: #95a79e;
+  font-size: 14px;
+  padding: 0 10px;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+`
+
+export const SignupButton = styled.div`
+
+button{
+  border: 1px solid transparent;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  font-weight: 400;
+  line-height: 1.5;
+
+    background: #f3f4f3;
+    color: #011a1e;
+    padding: 12px 12px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img{
+      margin-right:10px;
+    }
+
+}
+
+`

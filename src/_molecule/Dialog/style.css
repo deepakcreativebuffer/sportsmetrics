@@ -1,0 +1,39 @@
+.p-dialog {
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    border: 0 none;
+}
+.p-dialog-header {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+.p-dialog .p-dialog-header {
+    border-bottom: 0 none;
+    background: #ffffff;
+    color: #374151;
+    padding: 1.5rem;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+.p-dialog .p-dialog-content {
+    background: #ffffff;
+    color: #4b5563;
+    padding: 0 1.5rem 2rem 1.5rem;
+}
+
+.p-dialog .p-dialog-content:last-of-type {
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+/* Add this to your stylesheet */
+.p-dialog-mask.p-component-overlay {
+    pointer-events: auto;
+}
+
+.p-dialog-mask {
+    background-color: rgba(0, 0, 0, 0.5) !important; /* Add !important to override any existing styles */
+    transition-property: background-color;
+}

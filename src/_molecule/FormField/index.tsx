@@ -11,6 +11,8 @@ const FormField: React.FC<FormFieldProps & FieldAttributes<any>> = ({
   fieldName,
   placeholder,
   required,
+  labelicon,
+  passicon,
   ...props
 }) => {
   const [field, meta] = useField(name);
@@ -21,12 +23,12 @@ const FormField: React.FC<FormFieldProps & FieldAttributes<any>> = ({
 
   return (
     <div style={{flex:"1"}}>
-      <FormLabel title={fieldName}  required={required} />
+      {/* <FormLabel title={fieldName}  required={required} /> */}
       <div >
         {props.removeBorder ? (
           <div>{field.value}</div>
         ) : (
-          <FormInput placeholder={placeholder} {...field} {...props} errorMessage={isTouched ? errorMessage : ''} />
+          <FormInput placeholder={placeholder} labelicon={labelicon} passicon={passicon} {...field} {...props} errorMessage={isTouched ? errorMessage : ''} />
         )}
       </div>
       {isTouched && errorMessage && <ErrorMessage message={errorMessage} />}
